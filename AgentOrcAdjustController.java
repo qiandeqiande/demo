@@ -33,17 +33,18 @@ import java.util.List;
 
 /**
  * 業績調整(AgentOrcAdjust)表控制层
- * 测试
+ *
  * @author deqian@eisgroup.com
  * @since 2025-06-30
  */
-@Tag(name = "AgentOrcAdjust", description = "業績調整")
+@Tag(name = "AgentOrcAdjust", description = "業績調整3")
 @RestController
 @RequestMapping("/api/agentOrcAdjust")
 public class AgentOrcAdjustController {
     private static final Logger LOGGER = LoggerFactory.getLogger(AgentOrcAdjustController.class.getName());
     /**
      * 服务对象
+     * 33
      */
     @Autowired
     private AgentOrcAdjustService agentOrcAdjustService;
