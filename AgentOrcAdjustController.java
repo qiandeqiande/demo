@@ -44,7 +44,6 @@ public class AgentOrcAdjustController {
     private static final Logger LOGGER = LoggerFactory.getLogger(AgentOrcAdjustController.class.getName());
     /**
      * 服务对象
-     * 33
      */
     @Autowired
     private AgentOrcAdjustService agentOrcAdjustService;
@@ -61,22 +60,6 @@ public class AgentOrcAdjustController {
     @PostMapping(value = "/queryAgentOrcAdjustPage/v1", produces = MediaType.APPLICATION_JSON_VALUE)
     @Parameters({@Parameter(name = "page", description = "頁碼，從 1 開始", required = true), @Parameter(name = "size", description = "每頁條數", required = true)})
     public ResponseEntity<PageResult<AgentOrcAdjustVO>> queryAgentOrcAdjustPage(@RequestParam(required = true) int page, @RequestParam(required = true) int size, @RequestBody Criterion criterion) {
-        var pageResult = agentOrcAdjustService.queryAgentOrcAdjustPage(criterion, PageUtils.of(page, size, criterion.getSorts()));
-        return ResponseEntity.ok(pageResult);
-    }
-
-    /**
-     * 業績調整 分页查询
-     *
-     * @param page      頁碼，從 1 開始
-     * @param size      每頁條數
-     * @param criterion 篩選條件
-     */
-    @Operation(summary = "業績調整分页查询")
-    @Description("業績調整分页查询")
-    @PostMapping(value = "/queryAgentOrcAdjustPage/v2", produces = MediaType.APPLICATION_JSON_VALUE)
-    @Parameters({@Parameter(name = "page", description = "頁碼，從 1 開始", required = true), @Parameter(name = "size", description = "每頁條數", required = true)})
-    public ResponseEntity<PageResult<AgentOrcAdjustVO>> queryAgentOrcAdjustPageV2(@RequestParam(required = true) int page, @RequestParam(required = true) int size, @RequestBody Criterion criterion) {
         var pageResult = agentOrcAdjustService.queryAgentOrcAdjustPage(criterion, PageUtils.of(page, size, criterion.getSorts()));
         return ResponseEntity.ok(pageResult);
     }
@@ -136,7 +119,9 @@ public class AgentOrcAdjustController {
     public ResponseEntity<AgentOrcAdjustDetailVO> createAgentOrcAdjust(@RequestBody AgentOrcAdjustDetailDTO request) {
         var resultDto = this.agentOrcAdjustService.createAgentOrcAdjust(request);
         var result = AgentOrcAdjustDetailMapper.INSTANCE.convert(resultDto);
-        //測試111
+        // demo test，解決衝突1
+        // demo test，解決衝突2
+        //測試1
         //測試2
         //測試3
         //測試4
