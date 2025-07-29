@@ -119,6 +119,8 @@ public class AgentOrcAdjustController {
     public ResponseEntity<AgentOrcAdjustDetailVO> createAgentOrcAdjust(@RequestBody AgentOrcAdjustDetailDTO request) {
         var resultDto = this.agentOrcAdjustService.createAgentOrcAdjust(request);
         var result = AgentOrcAdjustDetailMapper.INSTANCE.convert(resultDto);
+        // demo test，解決衝突1
+        // demo test，解決衝突2
         return ResponseEntity.ok(result);
     }
 
