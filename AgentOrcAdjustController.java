@@ -112,7 +112,18 @@ public class AgentOrcAdjustController {
         var pageResult = agentOrcAdjustService.queryPolicyList(criterion);
         return ResponseEntity.ok(pageResult);
     }
-
+    /**
+     * 保單信息查詢
+     *
+     * @param criterion 篩選條件
+     */
+    @Operation(summary = "保單信息查詢")
+    @Description("保單信息查詢")
+    @PostMapping(value = "/queryPolicyList2/v1", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<AgentOrcAdjustPolicyVo>> queryPolicyList2(@RequestBody Criterion criterion) {
+        var pageResult = agentOrcAdjustService.queryPolicyList(criterion);
+        return ResponseEntity.ok(pageResult);
+    }
     /**
      * 業績調整新增
      *
